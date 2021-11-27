@@ -200,20 +200,16 @@ void getOrderMatrix(struct systemData sysData) {
     int meetsNeeds;
     int processesCompleted = 0;
     int lastCompleted = -1;
-    int exit = 0;
     while(1) {
         if(processesCompleted == sysData.numProcesses) {
             printf("%s", "System is in safe state.\n");
             printf("%s", "Safe process order: ");
-            exit = 1;
+            break;
         }
         if(processesCompleted == lastCompleted) {
             printf("%s", "System is in unsafe state.\nNumber of processes completed: ");
             printf("%d\n", processesCompleted);
             printf("%s", "Partial process order: ");
-            exit = 1;
-        }
-        if(exit) {
             break;
         }
         lastCompleted = processesCompleted;
