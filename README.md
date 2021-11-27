@@ -16,7 +16,9 @@ in a safe state, but output will say that and display the processes that could b
 completed successfully. 
 
 Instructions for running are as follows:
+
 Compile with: gcc bankers.c -o bankers
+
 Run with: ./bankers bankersinput.txt
 
 This project takes a text file as input. Example txt files are included in this
