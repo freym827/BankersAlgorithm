@@ -35,14 +35,19 @@ project. The required format is as follows:
     The Available matrix will be 1 x numResources. 
     
 Example input and output:
+
 Input 1:
+
 ![input1](/images/bankersinput1.png "input1")
 
 Output 1:
+
 ![output1](/images/bankersoutput1.png "output1")
 
 Input 2:
+
 ![input2](/images/bankersinput2.png "input2")
 
 Output 2:
+
 ![output2](/images/bankersoutput2.png "output2")
