@@ -77,6 +77,7 @@ struct systemData getSystemData(char* filePath) {
     if(getBankersMatrix(fp, sysData.allocationMatrix, allocationTag, sysData.numProcesses, sysData.numResources) == -1) {
         fclose(fp);
         freeMatrix(sysData.allocationMatrix, 1);
+        exit(-1);
     }
 
     sysData.maxMatrix = (int*)calloc(matrixSize, sizeof(int));
@@ -84,6 +85,7 @@ struct systemData getSystemData(char* filePath) {
         fclose(fp);
         freeMatrix(sysData.allocationMatrix, 1);
         freeMatrix(sysData.maxMatrix, 1);
+        exit(-1);
     }
 
     sysData.availableMatrix = (int*)calloc(sysData.numResources, sizeof(int));
@@ -92,6 +94,7 @@ struct systemData getSystemData(char* filePath) {
         freeMatrix(sysData.allocationMatrix, 1);
         freeMatrix(sysData.maxMatrix, 1);
         freeMatrix(sysData.availableMatrix, 1);
+        exit(-1);
     }
     
 
@@ -168,7 +171,8 @@ int* getNeedsMatrix(struct systemData sysData) {
         sysData.needsMatrix[i] = sysData.maxMatrix[i] - sysData.allocationMatrix[i];
         if(sysData.needsMatrix[i] < 0) {
             fprintf(stderr, "Allocation Matrix cannot contain value for a resource greater than Max Matrix.\n");
-            freeMatrices(sysData, 1);
+            freeMatrix(sysData.allocationMatrix, 1);
+            exit(-1);
         }
      }
 
@@ -263,7 +267,4 @@ void freeMatrices (struct systemData sysData, int isError) {
 
 void freeMatrix (int* matrix, int isError) {
     free(matrix);
-    if(isError) {
-        exit(-1);
-    }
 }
