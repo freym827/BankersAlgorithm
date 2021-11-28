@@ -7,15 +7,15 @@ on the needs of the processes and availability of the resources.
 https://en.wikipedia.org/wiki/Banker%27s_algorithm
 
 If the processes can not be completed based on their needs in comparison to the 
-available resoruces, the system will be in deadlock. 
+available resources, the system will be in deadlock. 
 
 This project takes the state of a system as input and examines the state to deduce whether
 the system is in a safe state or not. If the system is in a safe state, the output
 will say that and display the safe order of processes completed. If the system is not 
-in a safe state, but output will say that and display the processes that could be
+in a safe state, the output will say that and display the processes that could be
 completed successfully. 
 
-Instructions for running are as follows:
+Example instructions for running are as follows:
 
 Compile with: gcc bankers.c -o bankers
 
