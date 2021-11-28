@@ -51,3 +51,13 @@ Input 2:
 Output 2:
 
 ![output2](/images/bankersoutput2.png "output2")
+
+Example error messages:
+
+We have cases for:
+  - No input file specified
+  - Input file does not exist
+  - A tag for a matrix is spelled incorrectly
+  - The Max matrix contains a resource value for a process that is less than it's current allocation.
+
+![error](/images/bankerserror.png "error")
